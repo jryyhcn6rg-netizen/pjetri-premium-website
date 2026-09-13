@@ -625,7 +625,7 @@ button { font-family: inherit; cursor: pointer; }
    ========================================================================== */
 .testimonials { padding: var(--space-section) 0; background: var(--color-primary-darker); color: var(--color-on-dark); }
 .testimonials h2 { color: var(--color-on-dark); }
-.testimonial-carousel { max-width: 720px; margin: 0 auto; }
+.testimonial-carousel { max-width: 720px; margin: 0 auto; overflow: hidden; }
 .testimonial-track {
   display: flex;
   transition: transform var(--transition-med);
