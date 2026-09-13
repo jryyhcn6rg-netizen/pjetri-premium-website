@@ -138,9 +138,11 @@
     });
     var dots = Array.prototype.slice.call(dotsWrap.children);
 
-    function goTo(index) {
+    function goTo(index, instant) {
       current = (index + slides.length) % slides.length;
-      track.style.transform = "translateX(-" + (current * 100) + "%)";
+      var slide = slides[current];
+      var targetLeft = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
+      track.scrollTo({ left: targetLeft, behavior: instant ? "auto" : "smooth" });
       dots.forEach(function (d, i) {
         if (i === current) d.setAttribute("aria-current", "true");
         else d.removeAttribute("aria-current");
@@ -169,7 +171,7 @@
     carouselRoot.addEventListener("focusin", stopAutoplay);
     carouselRoot.addEventListener("focusout", startAutoplay);
 
-    goTo(0);
+    goTo(0, true);
     startAutoplay();
   }
 })();
