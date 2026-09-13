@@ -636,7 +636,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .testimonial-card {
   background: var(--color-ink-soft);
-  border: 1px dashed var(--color-ink-border);
+  border: 1px solid var(--color-ink-border);
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;
@@ -644,6 +644,12 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.testimonial-stars {
+  color: var(--color-primary);
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
 }
 .testimonial-quote {
   font-family: var(--font-heading);
@@ -655,6 +661,10 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--color-on-dark-muted);
   font-size: 14px;
   margin-bottom: 0;
+}
+.testimonial-source {
+  opacity: .7;
+  font-weight: 400;
 }
 .testimonial-controls {
   display: flex;
