@@ -166,8 +166,6 @@
     }
     function resetAutoplay() { stopAutoplay(); startAutoplay(); }
 
-    carouselRoot.addEventListener("mouseenter", stopAutoplay);
-    carouselRoot.addEventListener("mouseleave", startAutoplay);
     carouselRoot.addEventListener("focusin", stopAutoplay);
     carouselRoot.addEventListener("focusout", startAutoplay);
 

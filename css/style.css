@@ -623,8 +623,28 @@ button { font-family: inherit; cursor: pointer; }
 /* ==========================================================================
    Testimonials
    ========================================================================== */
-.testimonials { padding: var(--space-section) 0; background: var(--color-primary-darker); color: var(--color-on-dark); }
+.testimonials { padding: var(--space-section) 0; background: var(--color-primary-darker); color: var(--color-on-dark); position: relative; overflow: hidden; }
 .testimonials h2 { color: var(--color-on-dark); }
+.testimonials::before,
+.testimonials::after {
+  content: "“";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  font-family: var(--font-heading);
+  font-size: 320px;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: .10;
+  pointer-events: none;
+  z-index: 0;
+}
+.testimonials::before { left: 2%; }
+.testimonials::after { right: 2%; content: "”"; }
+@media (max-width: 900px) {
+  .testimonials::before, .testimonials::after { display: none; }
+}
+.testimonials .container { position: relative; z-index: 1; }
 .testimonial-carousel { max-width: 720px; margin: 0 auto; overflow: hidden; }
 .testimonial-track {
   display: flex;
